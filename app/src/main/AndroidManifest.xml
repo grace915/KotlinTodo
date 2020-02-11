@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
         <receiver android:name=".main.todo_widget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -21,8 +23,8 @@
 
         <activity android:name=".add_edit.AddEditTodoActivity" />
         <activity android:name=".main.todo_widget" />
-        <activity android:name=".main.MainTodoViewHolder" />
-        <activity android:name=".main.MainTodoAdapter" />
+        <activity android:name=".main.todo.TodoViewHolder" />
+        <activity android:name=".main.todo.TodoAdapter" />
         <activity android:name=".main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

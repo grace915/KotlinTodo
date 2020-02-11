@@ -15,7 +15,7 @@ interface TodoDao {
     @Update
     fun updateTodo(item: TodoItem)
 
-    @Query("SELECT * FROM todo")
+    @Query("SELECT * FROM todo ORDER BY eDate")
     fun getTodos(): List<TodoItem>
 
     @Query("SELECT * FROM todo WHERE id = :id")

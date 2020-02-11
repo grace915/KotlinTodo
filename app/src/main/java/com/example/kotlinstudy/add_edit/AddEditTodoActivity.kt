@@ -43,6 +43,7 @@ class AddEditTodoActivity : AppCompatActivity() {
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
         if (mode == MODE_EDIT) {
+
             id = intent.getIntExtra("item_id", -1).also {
                 if (it == -1) {
                     Log.d("item_id", "item id wrong")
@@ -50,6 +51,7 @@ class AddEditTodoActivity : AppCompatActivity() {
                     finish()
                 }
             }
+
             val myDatabase = MyDatabase.getInstance(this)
             myDatabase?.todoDao()?.getTodo(id!!)?.also {
                 add_edit_til_todo.editText?.setText(it.name)
@@ -58,6 +60,7 @@ class AddEditTodoActivity : AppCompatActivity() {
                 add_edit_til_memo.editText?.setText(it.memo)
             }
         }
+
 
 
         add_edit_til_start_date.editText?.setOnClickListener {

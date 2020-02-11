@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_main_todo"
+        android:icon="@drawable/ic_todo"
+        android:title="Todo" />
+    <item
+        android:id="@+id/navigation_main_done"
+        android:icon="@drawable/ic_todo_check"
+        android:title="Done" />
+    <item
+        android:id="@+id/navigation_main_setting"
+        android:icon="@drawable/ic_setting"
+        android:title="Setting" />
+</menu>
