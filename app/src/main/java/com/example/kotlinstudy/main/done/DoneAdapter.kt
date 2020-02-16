@@ -23,25 +23,12 @@ class DoneAdapter(private val context: Context) : RecyclerView.Adapter<DoneViewH
         val items = myDatabase?.doneDao()?.getAllTodo()?.also {
             itemList.addAll(it)
         }
+
         notifyDataSetChanged()
     }
 
-    fun deleteItem(item: DoneItem) {
 
-        myDatabase?.doneDao()?.deleteTodo(item)
 
-        itemList.remove(item)
-        notifyDataSetChanged()
-    }
-
-    fun refresh() {
-
-        myDatabase?.doneDao()?.getAllTodo()?.also {
-            itemList.clear()
-            itemList.addAll(it)
-            notifyDataSetChanged()
-        }
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DoneViewHolder {
         var viewHolder = DoneViewHolder(
@@ -52,9 +39,6 @@ class DoneAdapter(private val context: Context) : RecyclerView.Adapter<DoneViewH
             )
         )
 
-        viewHolder.itemView.setOnClickListener{
-
-        }
 
         return viewHolder
 
@@ -71,5 +55,7 @@ class DoneAdapter(private val context: Context) : RecyclerView.Adapter<DoneViewH
     override fun onBindViewHolder(holder: DoneViewHolder, position: Int) {
         holder.onbind(itemList[position])
     }
+
+
 
 }

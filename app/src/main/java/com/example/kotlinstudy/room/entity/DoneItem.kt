@@ -9,7 +9,7 @@ data class DoneItem(
     val id: Int,
     var name: String,
     var sDate: String,
-    var dDate: String,
-    var memo: String,
-    var doneDate: String
+    var eDate: String,
+    var memo: String
+   //var doneDate: String
 )

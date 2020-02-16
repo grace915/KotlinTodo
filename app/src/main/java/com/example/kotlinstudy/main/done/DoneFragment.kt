@@ -7,15 +7,18 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Database
 import com.example.kotlinstudy.R
+import com.example.kotlinstudy.main.todo.TodoAdapter
 import com.example.kotlinstudy.room.database.MyDatabase
+import com.example.kotlinstudy.room.entity.DoneItem
 import kotlinx.android.synthetic.main.fragment_done.*
 import java.util.zip.Inflater
 
 class DoneFragment: Fragment(){
 
-    private var adapter = DoneAdapter? = null
+    private var adapter :  DoneAdapter? = null
     private val myDatabase: MyDatabase? = MyDatabase.getInstance(context!!)
-
+    var itemList: MutableList<DoneItem> = mutableListOf()
+    //does not have a companion obgect, and thus must be initialized here
 
 
 
@@ -33,12 +36,10 @@ class DoneFragment: Fragment(){
 
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+   override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when(item?.itemId){
             R.id.menu_done_delete ->{
-
-            }
-            R.id.menu_done_refresh->{
+                when()
 
             }
         }
@@ -52,4 +53,6 @@ class DoneFragment: Fragment(){
     ): View? {
      return inflater.inflate(R.layout.fragment_done,container,false)
     }
+
+
 }

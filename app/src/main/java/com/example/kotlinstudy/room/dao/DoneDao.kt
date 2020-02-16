@@ -5,7 +5,7 @@ import com.example.kotlinstudy.room.entity.DoneItem
 import com.example.kotlinstudy.room.entity.TodoItem
 
 @Dao
-interface DoneDao{
+interface DoneDao {
 //필요한거 : 삭제, 전체 삭제, 들고오기 필요한가?, 일단 다해보자, 아 여기에는 그 시간이 중요한데 체크되었을 때 시간을 알아야 하잖아.
 
     @Insert
@@ -23,5 +23,5 @@ interface DoneDao{
 
     @Query("SELECT * FROM todo WHERE id = :id")
     fun getTodo(id: Int): DoneItem
-}
 
+}

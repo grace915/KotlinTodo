@@ -22,9 +22,6 @@ class MainActivity : AppCompatActivity() {
 
         val fragment1 = TodoFragment()
         val fragment2 = DoneFragment()
-        val doneMenu = R.menu.menu_checked
-
-
 
 
 
@@ -50,8 +47,6 @@ class MainActivity : AppCompatActivity() {
                     supportActionBar?.title = "Done list"
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.main_frameLayout, fragment2).commitAllowingStateLoss()
-                    supportFragmentManager.beginTransaction().add(R.id
-
 
 
                     return@setOnNavigationItemSelectedListener true

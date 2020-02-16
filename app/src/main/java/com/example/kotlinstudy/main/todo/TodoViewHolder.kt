@@ -4,7 +4,9 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.example.kotlinstudy.room.entity.DoneItem
 import com.example.kotlinstudy.room.entity.TodoItem
+import kotlinx.android.synthetic.main.fragment_done.view.*
 import kotlinx.android.synthetic.main.item_todo.view.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -22,6 +24,12 @@ class TodoViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         }
         itemView.todo_tv_name.text = item.name
         itemView.todo_tv_due.text = item.eDate
+
+       // when(itemView.todo_cb.isChecked){
+         //   true -> {
+           //     itemView.done_rcv_item = itemView.todo_cb
+            //}
+        //}
 
 
 

@@ -5,9 +5,7 @@
     <item
         android:id="@+id/menu_done_delete"
         android:title="delete"
-        />
-    <item
-        android:id="@+id/menu_done_refresh"
-        android:title="refresh" />
-    /
+        app:showAsAction="always" />
+
+
 </menu>
