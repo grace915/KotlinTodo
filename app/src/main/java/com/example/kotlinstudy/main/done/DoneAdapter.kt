@@ -13,7 +13,8 @@ import com.example.kotlinstudy.room.entity.DoneItem
 import com.example.kotlinstudy.room.entity.TodoItem
 
 
-class DoneAdapter(private val context: Context) : RecyclerView.Adapter<DoneViewHolder>() {
+class DoneAdapter(private val context: Context) : RecyclerView.Adapter<DoneViewHolder>()  {
+
 
     private val myDatabase: MyDatabase? = MyDatabase.getInstance(context)
     var itemList: MutableList<DoneItem> = mutableListOf()
@@ -59,6 +60,10 @@ class DoneAdapter(private val context: Context) : RecyclerView.Adapter<DoneViewH
 
 
     }
+
+
+
+
     override fun getItemCount(): Int {
         return itemList.size
     }
