@@ -15,6 +15,7 @@ import com.example.kotlinstudy.room.entity.TodoItem
 class TodoAdapter(private val context: Context) : RecyclerView.Adapter<TodoViewHolder>() {
     private val myDatabase: MyDatabase? = MyDatabase.getInstance(context)
     var itemList: MutableList<TodoItem> = mutableListOf()
+    val doneMenu = R.menu.menu_checked
 
     init {
 
@@ -61,16 +62,19 @@ class TodoAdapter(private val context: Context) : RecyclerView.Adapter<TodoViewH
         )
 
         viewHolder.itemView.setOnClickListener {
+
             itemList[viewHolder.adapterPosition].also {
                 it.checked = !it.checked
-
                 myDatabase?.todoDao()?.updateTodo(it)
+
 
             }
 
-
             notifyDataSetChanged()
         }
+
+
+
         viewHolder.itemView.setOnLongClickListener {
             val builder = AlertDialog.Builder(parent.context)
             val menu: Array<String> = arrayOf("삭제", "수정", "취소")
@@ -109,6 +113,8 @@ class TodoAdapter(private val context: Context) : RecyclerView.Adapter<TodoViewH
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
         holder.onbind(itemList[position])
     }
+
+
 
 
 }
