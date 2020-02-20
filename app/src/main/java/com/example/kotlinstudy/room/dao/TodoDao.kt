@@ -15,9 +15,12 @@ interface TodoDao {
     @Update
     fun updateTodo(item: TodoItem)
 
-    @Query("SELECT * FROM todo ORDER BY eDate")
+    @Query("SELECT * FROM todo ORDER BY dDate")
     fun getTodos(): List<TodoItem>
 
     @Query("SELECT * FROM todo WHERE id = :id")
     fun getTodo(id: Int): TodoItem
+
+    @Query("SELECT * FROM todo WhERE checked == 1")
+    fun getTodoDone(): List<TodoItem>
 }

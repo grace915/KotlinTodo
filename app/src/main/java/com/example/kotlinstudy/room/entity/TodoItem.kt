@@ -15,7 +15,7 @@ data class TodoItem(
     val id: Int,
     var name: String,
     var sDate: String,
-    var eDate: String,
+    var dDate: String,
     var memo: String
 ) : Parcelable {
     var checked: Boolean = false

@@ -10,10 +10,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_done,menu)
-        return super.onCreateOptionsMenu(menu)
-    }
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +20,6 @@ class MainActivity : AppCompatActivity() {
 
         val fragment1 = TodoFragment()
         val fragment2 = DoneFragment()
-
 
 
         supportActionBar?.title = "Todo list"

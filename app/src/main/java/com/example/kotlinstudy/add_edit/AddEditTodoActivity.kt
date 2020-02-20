@@ -56,7 +56,7 @@ class AddEditTodoActivity : AppCompatActivity() {
             myDatabase?.todoDao()?.getTodo(id!!)?.also {
                 add_edit_til_todo.editText?.setText(it.name)
                 add_edit_til_start_date.editText?.setText(it.sDate)
-                add_edit_til_due_date.editText?.setText(it.eDate)
+                add_edit_til_due_date.editText?.setText(it.dDate)
                 add_edit_til_memo.editText?.setText(it.memo)
             }
         }
@@ -99,7 +99,7 @@ class AddEditTodoActivity : AppCompatActivity() {
                             database?.todoDao()?.getTodo(id!!)?.let {
                                 it.name = todoName
                                 it.sDate = todoStart
-                                it.eDate = todoDue
+                                it.dDate = todoDue
                                 it.memo = todoMemo
                                 database.todoDao().updateTodo(it)
                                 finish()

@@ -11,15 +11,32 @@ import com.example.kotlinstudy.main.todo.TodoAdapter
 import com.example.kotlinstudy.room.database.MyDatabase
 import com.example.kotlinstudy.room.entity.DoneItem
 import kotlinx.android.synthetic.main.fragment_done.*
+import kotlinx.android.synthetic.main.item_collection.*
+import kotlinx.android.synthetic.main.item_todo.*
 import java.util.zip.Inflater
 
 class DoneFragment: Fragment(){
 
     private var adapter :  DoneAdapter? = null
-    private val myDatabase: MyDatabase? = MyDatabase.getInstance(context!!)
+    private val myDatabase: MyDatabase? = null
     var itemList: MutableList<DoneItem> = mutableListOf()
     //does not have a companion obgect, and thus must be initialized here
 
+    fun deleteItem(item : DoneItem){
+        myDatabase?.doneDao()?.deleteDone(item)
+        itemList.remove(item)
+    }
+
+    fun refresh() {
+
+        myDatabase?.doneDao()?.getDones()?.also {
+            itemList.clear()
+            itemList.addAll(it)
+
+        }
+
+
+    }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -30,18 +47,16 @@ class DoneFragment: Fragment(){
 
     }
 
+
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
         inflater?.inflate(R.menu.menu_done, menu)
         super.onCreateOptionsMenu(menu, inflater)
-
     }
 
    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when(item?.itemId){
-            R.id.menu_done_delete ->{
-                when()
 
-            }
+        when(item?.itemId){
+
         }
         return super.onOptionsItemSelected(item)
     }
@@ -53,6 +68,12 @@ class DoneFragment: Fragment(){
     ): View? {
      return inflater.inflate(R.layout.fragment_done,container,false)
     }
+
+    override fun onResume() {
+        super.onResume()
+        adapter?.refresh()
+    }
+
 
 
 }

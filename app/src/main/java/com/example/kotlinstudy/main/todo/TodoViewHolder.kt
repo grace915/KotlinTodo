@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.example.kotlinstudy.main.done.DoneAdapter
 import com.example.kotlinstudy.room.entity.DoneItem
 import com.example.kotlinstudy.room.entity.TodoItem
 import kotlinx.android.synthetic.main.fragment_done.view.*
@@ -23,13 +24,7 @@ class TodoViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
             }
         }
         itemView.todo_tv_name.text = item.name
-        itemView.todo_tv_due.text = item.eDate
-
-       // when(itemView.todo_cb.isChecked){
-         //   true -> {
-           //     itemView.done_rcv_item = itemView.todo_cb
-            //}
-        //}
+        itemView.todo_tv_due.text = item.dDate
 
 
 
@@ -37,9 +32,8 @@ class TodoViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val mYear = cal.get(Calendar.YEAR)
         val mMonth = cal.get(Calendar.MONTH) + 1
         val mDay = cal.get(Calendar.DAY_OF_MONTH)
-
         val simpleDateFormat = SimpleDateFormat("yyyy / MM / dd")
-        val dDate = simpleDateFormat.parse(item.eDate)
+        val dDate = simpleDateFormat.parse(item.dDate)
         val today = simpleDateFormat.parse("$mYear / $mMonth / $mDay")
         val left = -(dDate.time - today.time)/(24*60*60*1000)
         itemView.todo_tv_left.text = "D" + (left).toString()

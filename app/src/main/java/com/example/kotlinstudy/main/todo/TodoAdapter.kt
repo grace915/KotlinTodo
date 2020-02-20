@@ -67,10 +67,12 @@ class TodoAdapter(private val context: Context) : RecyclerView.Adapter<TodoViewH
                 it.checked = !it.checked
                 myDatabase?.todoDao()?.updateTodo(it)
 
-
             }
 
             notifyDataSetChanged()
+            /*if(itemList[viewHolder.adapterPosition].checked){
+
+            }*/
         }
 
 

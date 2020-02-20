@@ -3,9 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/menu_done_delete"
-        android:title="delete"
-        app:showAsAction="always" />
+        android:id="@+id/menu_done_select"
+        android:title="select"
+         />
+    <item
+        android:id="@+id/menu_done_deleteAll"
+        android:title="Item"
+        />
 
 
 </menu>
