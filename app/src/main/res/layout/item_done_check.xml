@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <CheckBox
-        android:id="@+id/done_check_cb"
+        android:id="@+id/done_cb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -27,7 +27,7 @@
         android:layout_margin="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf = "parent"
-        app:layout_constraintStart_toEndOf="@id/done_check_cb"
+        app:layout_constraintStart_toEndOf="@id/done_cb"
         app:layout_constraintTop_toTopOf="parent" />
 
 

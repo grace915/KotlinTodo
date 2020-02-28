@@ -11,6 +11,7 @@ import com.example.kotlinstudy.room.entity.DoneItem
 
 import kotlinx.android.synthetic.main.fragment_done.view.*
 import kotlinx.android.synthetic.main.item_done.view.*
+import kotlinx.android.synthetic.main.item_done_check.view.*
 
 import java.text.SimpleDateFormat
 import java.util.*
@@ -29,12 +30,10 @@ class DoneViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
             }
         }
         itemView.done_tv_name.text = item.name
-        itemView.done_tv_due.text = item.dDate
 
 
 
 
-       itemView.done_tv_due.text = item.dDate
        itemView.done_tv_done_date.text = item.doneDate
     }
 

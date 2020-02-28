@@ -41,34 +41,63 @@ class DoneAdapter(private val context: Context) : RecyclerView.Adapter<DoneViewH
     }
 
 
+    override fun getItemViewType(position: Int): Int {
+        return when(id){
+            R.id.menu_confirm ->{
+                0
+            }
+            else ->{
+                1
+            }
+        }
+        return super.getItemViewType(position)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DoneViewHolder {
-        var viewHolder = DoneViewHolder(
-            LayoutInflater.from(parent.context).inflate(
-                R.layout.item_done,
-                parent,
-                false
-            )
-        )
 
-        viewHolder.itemView.setOnClickListener {
+        when (viewType) {
+            0 -> {
+                var viewHolder = DoneViewHolder(
+                    LayoutInflater.from(parent.context).inflate(
+                        R.layout.item_done_check,
+                        parent,
+                        false
+                    )
+                )
 
-            itemList[viewHolder.adapterPosition].also {
+                viewHolder.itemView.setOnClickListener {
 
-                it.checked = !it.checked
-                myDatabase?.doneDao()?.updateDone(it)
-                //myDatabase?.doneDao()?.getDone(id!!).also{
+                    itemList[viewHolder.adapterPosition].also {
 
+                        it.checked = !it.checked
+                        myDatabase?.doneDao()?.updateDone(it)
 
-                //}
+                    }
+                    notifyDataSetChanged()
 
+                }
+                return viewHolder
             }
-            notifyDataSetChanged()
+            else -> {
+                var viewHolder = DoneViewHolder(
+                    LayoutInflater.from(parent.context).inflate(
+                        R.layout.item_done,
+                        parent,
+                        false
+                    )
+                )
+                return viewHolder
+            }
+
+
+
         }
 
-        return viewHolder
+
 
     }
+
+
 
 
 
