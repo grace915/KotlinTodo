@@ -66,12 +66,13 @@ class DoneAdapter(private val context: Context) : RecyclerView.Adapter<DoneViewH
 
                 it.checked = !it.checked
                 myDatabase?.doneDao()?.updateDone(it)
-                myDatabase?.doneDao()?.getDone(id!!).also{
+                //myDatabase?.doneDao()?.getDone(id!!).also{
 
-                }
 
+                //}
 
             }
+            notifyDataSetChanged()
         }
 
         return viewHolder

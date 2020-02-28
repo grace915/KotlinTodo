@@ -4,12 +4,10 @@
 
     <item
         android:id="@+id/menu_done_select"
-        android:title="select"
-         />
+        android:title="select" />
     <item
         android:id="@+id/menu_done_deleteAll"
-        android:title="Item"
-        />
+        android:title="delete All" />
 
 
 </menu>

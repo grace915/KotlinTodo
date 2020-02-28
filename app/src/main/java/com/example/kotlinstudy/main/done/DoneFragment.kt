@@ -49,13 +49,23 @@ class DoneFragment: Fragment(){
 
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        inflater?.inflate(R.menu.menu_done, menu)
         super.onCreateOptionsMenu(menu, inflater)
+        inflater?.inflate(R.menu.menu_done, menu)
+
     }
 
    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
 
         when(item?.itemId){
+            R.id.menu_done_select->{
+
+
+            }
+            R.id.menu_done_deleteAll->{
+
+                deleteItem()
+
+            }
 
         }
         return super.onOptionsItemSelected(item)

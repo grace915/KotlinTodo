@@ -24,7 +24,7 @@ class AddEditTodoActivity : AppCompatActivity() {
     }
 
     private var mode: Int? = null
-    private var id : Int? = null
+    private var id: Int? = null
 
     private val MODE_STATRT_DATE = 0
     private val MODE_DUE_DATE = 1
@@ -95,7 +95,7 @@ class AddEditTodoActivity : AppCompatActivity() {
                             val newTodo = TodoItem(0, todoName, todoStart, todoDue, todoMemo)
                             database?.todoDao()?.insertTodo(newTodo)
                             finish()
-                        } else{
+                        } else {
                             database?.todoDao()?.getTodo(id!!)?.let {
                                 it.name = todoName
                                 it.sDate = todoStart
@@ -144,9 +144,9 @@ class AddEditTodoActivity : AppCompatActivity() {
 
         DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
             val sMonth: String = if (month + 1 < 10) {
-                "0${month+1}"
+                "0${month + 1}"
             } else {
-                (month+1).toString()
+                (month + 1).toString()
             }
             val sDay: String = if (dayOfMonth < 10) {
                 "0$dayOfMonth"
