@@ -10,7 +10,7 @@ import com.example.kotlinstudy.R
 import com.example.kotlinstudy.room.entity.DoneItem
 
 import kotlinx.android.synthetic.main.fragment_done.view.*
-import kotlinx.android.synthetic.main.item_collection.view.*
+import kotlinx.android.synthetic.main.item_done.view.*
 
 import java.text.SimpleDateFormat
 import java.util.*

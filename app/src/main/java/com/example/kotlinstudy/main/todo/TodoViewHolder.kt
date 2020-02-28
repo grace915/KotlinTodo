@@ -43,6 +43,11 @@ class TodoViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
             itemView.todo_tv_left.text = "D" + "+" + left.toString()
         }
 
+        if(left.toInt()  ==  0){
+            itemView.todo_tv_left.setTextColor(Color.RED)
+            itemView.todo_tv_left.text = "D-Day"
+        }
+
 
     }
 

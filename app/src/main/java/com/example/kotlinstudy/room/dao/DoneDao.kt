@@ -24,4 +24,10 @@ interface DoneDao {
     @Query("SELECT * FROM done WHERE id = :id")
     fun getDone(id: Int): DoneItem
 
+    @Query("DELETE FROM done")
+    fun deleteAll()
+
+    @Query("DELETE FROM done WHERE checked=1")
+    fun deleteCheckedItem()
+
 }
